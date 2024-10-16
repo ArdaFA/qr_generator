@@ -25,14 +25,42 @@ class IntroPage extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+
+              // guide text for the user
               Text("Give the URL to generate a QR Code",
                 style: TextStyle(
                   color: primaryColor,
                   fontSize: 18,
                 ),
               ),
+
+              const SizedBox(height: 16,),
+
+              // enter the URL text field
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: primaryColor,
+                          width: 3.0
+                        ),
+                        borderRadius: BorderRadius.circular(20)
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: secondaryColor,
+                        ),
+                        borderRadius: BorderRadius.circular(20)
+                    ),
+                  ),
+                ),
+              ),
+
+
             ],
           ),
 

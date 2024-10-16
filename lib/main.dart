@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qr_generator/pages/display_qr.dart';
 import 'package:qr_generator/pages/intro_page.dart';
 
 void main(){
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget{
       home: IntroPage(),
       routes: {
         '/intropage': (context) => const IntroPage(),
+        '/displayQr' : (context) => const DisplayQR(),
       },
     ); //MaterialApp
   }
