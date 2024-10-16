@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:qr_generator/themes/colors.dart';
 
+import '../components/button.dart';
+
 class IntroPage extends StatelessWidget {
   const IntroPage({Key? key}) : super(key: key);
 
@@ -59,6 +61,18 @@ class IntroPage extends StatelessWidget {
                   ),
                 ),
               ),
+
+
+              const SizedBox(height: 12,),
+              // button to generate QR Code
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 90),
+                child: MyButton(
+                    text: "generate",
+                    onTap: (){
+                      Navigator.pushNamed(context, '/displayQr');
+                    }),
+              )
 
 
             ],
