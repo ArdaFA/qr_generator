@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 import 'package:qr_generator/themes/colors.dart';
+
 
 import '../components/button.dart';
 
-class DisplayQR extends StatelessWidget {
+class DisplayQR extends StatefulWidget {
   const DisplayQR({Key? key}) : super(key: key);
 
   @override
+  State<DisplayQR> createState() => _DisplayQRState();
+}
+
+class _DisplayQRState extends State<DisplayQR> {
+  @override
   Widget build(BuildContext context) {
+
+    // Retrieve the URL that was passed as an argument
+    final String? qrData = ModalRoute.of(context)!.settings.arguments as String?;
+
     return Scaffold(
       // No appBar property here, removing it
       backgroundColor: backgroundColor, // solid color for the background
@@ -23,7 +34,25 @@ class DisplayQR extends StatelessWidget {
 
             const SizedBox(height: 24,),
 
-            // qr code itself (you can add the QR code widget here)
+            // first, try to display the text that has been entered
+            // Display the URL text
+            if (qrData != null)
+              Text(
+                qrData,
+                style: const TextStyle(color: Colors.black, fontSize: 16),
+              ),
+
+
+            // QR code itself
+            if (qrData != null && qrData.isNotEmpty) // Only display if qrData is valid
+              // qrData is guaranteed to be non-null
+              QrImageView(
+                data: qrData,
+                version: QrVersions.auto,
+                size: 200.0,
+              ),
+
+            const SizedBox(height: 8,),
 
             // button to save it
             Padding(

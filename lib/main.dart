@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget{
       debugShowCheckedModeBanner: false,
       home: IntroPage(),
       routes: {
-        '/intropage': (context) => const IntroPage(),
+        '/intropage': (context) => IntroPage(),
         '/displayQr' : (context) => const DisplayQR(),
       },
     ); //MaterialApp

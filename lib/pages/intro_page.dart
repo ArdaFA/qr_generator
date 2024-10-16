@@ -4,7 +4,10 @@ import 'package:qr_generator/themes/colors.dart';
 import '../components/button.dart';
 
 class IntroPage extends StatelessWidget {
-  const IntroPage({Key? key}) : super(key: key);
+  IntroPage({Key? key}) : super(key: key);
+
+  // Controller to get the text input
+  final TextEditingController _urlController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +47,7 @@ class IntroPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: TextField(
+                  controller: _urlController,
                   decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
@@ -70,7 +74,13 @@ class IntroPage extends StatelessWidget {
                 child: MyButton(
                     text: "generate",
                     onTap: (){
-                      Navigator.pushNamed(context, '/displayQr');
+                      // When the button is pressed, navigate to DisplayQR
+                      // and pass the URL entered by the user
+                      Navigator.pushNamed(
+                        context,
+                        '/displayQr',
+                        arguments: _urlController.text,  // Pass the text as an argument
+                      );
                     }),
               )
 
