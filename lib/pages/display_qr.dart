@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:qr_generator/themes/colors.dart';
-
-
 import '../components/button.dart';
 
 class DisplayQR extends StatefulWidget {
@@ -23,8 +21,10 @@ class _DisplayQRState extends State<DisplayQR> {
       // No appBar property here, removing it
       backgroundColor: backgroundColor, // solid color for the background
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(24, 120, 24, 120),
+        padding: const EdgeInsets.fromLTRB(24, 120, 24, 320),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             // text to show qr code
             Text(
@@ -41,7 +41,6 @@ class _DisplayQRState extends State<DisplayQR> {
                 qrData,
                 style: const TextStyle(color: Colors.black, fontSize: 16),
               ),
-
 
             // QR code itself
             if (qrData != null && qrData.isNotEmpty) // Only display if qrData is valid
