@@ -21,7 +21,7 @@ class _DisplayQRState extends State<DisplayQR> {
       // No appBar property here, removing it
       backgroundColor: backgroundColor, // solid color for the background
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(24, 120, 24, 320),
+        padding: const EdgeInsets.fromLTRB(24, 120, 24, 220),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -54,14 +54,26 @@ class _DisplayQRState extends State<DisplayQR> {
             const SizedBox(height: 8,),
 
             // button to save it
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12.0),
-              child: MyButton(
-                text: "save",
-                onTap: () {
-                  // Action when the button is tapped
-                },
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                MyButton(
+                  text: "save",
+                  onTap: () {
+                    // Action when the button is tapped
+                  },
+                ),
+
+                const SizedBox(width: 8,),
+
+                MyButton(
+                  text: "share",
+                  onTap: () {
+                    // Action when the button is tapped
+                  },
+                ),
+              ],
             ),
           ],
         ),
