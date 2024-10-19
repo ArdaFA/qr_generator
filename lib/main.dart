@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qr_generator/pages/display_qr.dart';
+import 'package:qr_generator/pages/homepage.dart';
 import 'package:qr_generator/pages/intro_page.dart';
 
 void main(){
@@ -13,10 +14,12 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context){
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: IntroPage(),
+      home: Home(),
       routes: {
+        '/homepage' : (context) => const Home(),
         '/intropage': (context) => IntroPage(),
         '/displayQr' : (context) => const DisplayQR(),
+
       },
     ); //MaterialApp
   }
