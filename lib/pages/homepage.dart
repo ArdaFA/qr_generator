@@ -12,8 +12,7 @@ class Home extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-              padding: const EdgeInsets.symmetric(
-                  vertical: 200),
+              padding: const EdgeInsets.fromLTRB(30,200,30,200),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -30,7 +29,12 @@ class Home extends StatelessWidget {
 
                 MyButton(
                     text: "scan",
-                    onTap: (){}
+                    onTap: (){
+                      Navigator.pushNamed(
+                        context,
+                        '/scanpage',
+                      );
+                    }
                 ),
               ],
             ),
